@@ -27,7 +27,7 @@
     <p>
         <a asp-action="Create">Create New</a>
     </p>
-    <table id="example" class="table" >
+    <table id="example" class="table">
         <thead>
             <tr>
                 <th>
@@ -85,23 +85,38 @@
                         @Html.ActionLink("Delete", "Delete", new { name = item.Name })
                     </td>
                 </tr>
+
             }
         </tbody>
     </table>
+
+    <h1>ImportExcel</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" asp-controller="FileUpload" asp-action="ImportFromExcel"
+                  enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="file" name="file" class="form-control" />
+                <button type="submit" name="Upload" class="btn btn-primary">Upload </button>
+
+            </form>
+        </div>
+    </div>
 
     <script>
         $(document).ready(function () {
             $('#example').DataTable();
         });
         $('#example').DataTable({
-            pageLength:3,
-            paging:true
+            pageLength: 3,
+            paging: true
         });
-       
-    </script>
-   
 
-   
+    </script>
+
+
+
     <script>
         $(document).ready(function () {
             $('#example').DataTable({

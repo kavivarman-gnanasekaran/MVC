@@ -135,5 +135,9 @@ namespace MVCproject.Controllers
             }
             return View();
         }
+        public IActionResult ImportExcel()
+        {  
+            return View();
+        }
     }
 }
